@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Dự đoán hoa Iris 🌸</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="card shadow mx-auto" style="max-width: 500px;">
+            <div class="card-header bg-primary text-white text-center">
+                <h4 class="mb-0">🔍 Dự đoán loài hoa Iris</h4>
+            </div>
+            <div class="card-body text-center">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">Sepal Length (cm):</label><br>
+                        <input type="text" name="sl" class="form-control form-control-sm mx-auto" required value="{{ sl }}" style="max-width: 200px;">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Sepal Width (cm):</label><br>
+                        <input type="text" name="sw" class="form-control form-control-sm mx-auto" required value="{{ sw }}" style="max-width: 200px;">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Petal Length (cm):</label><br>
+                        <input type="text" name="pl" class="form-control form-control-sm mx-auto" required value="{{ pl }}" style="max-width: 200px;">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Petal Width (cm):</label><br>
+                        <input type="text" name="pw" class="form-control form-control-sm mx-auto" required value="{{ pw }}" style="max-width: 200px;">
+                    </div>
+                    <button type="submit" class="btn btn-success mt-2">🌸 Dự đoán</button>
+                </form>
+
+                {% if species %}
+                    <div class="alert alert-info mt-4">
+                        <strong>Kết quả:</strong> {{ species }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
